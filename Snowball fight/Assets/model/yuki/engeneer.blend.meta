@@ -1,0 +1,669 @@
+fileFormatVersion: 2
+guid: e71c5d7050ca77a43a402c719df59252
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ArmA_L
+    100002: ArmA_R
+    100004: Armature
+    100006: ArmB_L
+    100008: ArmB_R
+    100010: BallInitPosition
+    100012: Body
+    100014: Cube
+    100016: //RootNode
+    100018: FIng_A_L
+    100020: FIng_A_R
+    100022: Fing_B1_L
+    100024: Fing_B1_R
+    100026: Fing_B2_L
+    100028: Fing_B2_R
+    100030: Head
+    100032: IK_Leg_001_R
+    100034: IK_Leg_L
+    100036: LegA_L
+    100038: LegA_R
+    100040: LegB_L
+    100042: LegB_R
+    100044: LegC_L
+    100046: LegC_R
+    100048: Root
+    100050: West
+    400000: ArmA_L
+    400002: ArmA_R
+    400004: Armature
+    400006: ArmB_L
+    400008: ArmB_R
+    400010: BallInitPosition
+    400012: Body
+    400014: Cube
+    400016: //RootNode
+    400018: FIng_A_L
+    400020: FIng_A_R
+    400022: Fing_B1_L
+    400024: Fing_B1_R
+    400026: Fing_B2_L
+    400028: Fing_B2_R
+    400030: Head
+    400032: IK_Leg_001_R
+    400034: IK_Leg_L
+    400036: LegA_L
+    400038: LegA_R
+    400040: LegB_L
+    400042: LegB_R
+    400044: LegC_L
+    400046: LegC_R
+    400048: Root
+    400050: West
+    4300000: Cube
+    7400000: Make
+    7400002: Make
+    7400004: Run
+    7400006: Throw
+    7400008: Death
+    7400010: Wait
+    7400012: PreThrow
+    7400014: PostThrow
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Cube
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Make
+      takeName: Default Take
+      firstFrame: 130
+      lastFrame: 160
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/IK_Leg_001_R
+        weight: 1
+      - path: Armature/Root/IK_Leg_L
+        weight: 1
+      - path: Armature/Root/West
+        weight: 1
+      - path: Armature/Root/West/Body
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/FIng_A_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L/Fing_B2_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/BallInitPosition
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/FIng_A_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R/Fing_B2_R
+        weight: 1
+      - path: Armature/Root/West/Body/Head
+        weight: 1
+      - path: Armature/Root/West/LegA_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L/LegC_L
+        weight: 1
+      - path: Armature/Root/West/LegA_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R/LegC_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 11
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/IK_Leg_001_R
+        weight: 1
+      - path: Armature/Root/IK_Leg_L
+        weight: 1
+      - path: Armature/Root/West
+        weight: 1
+      - path: Armature/Root/West/Body
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/FIng_A_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L/Fing_B2_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/BallInitPosition
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/FIng_A_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R/Fing_B2_R
+        weight: 1
+      - path: Armature/Root/West/Body/Head
+        weight: 1
+      - path: Armature/Root/West/LegA_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L/LegC_L
+        weight: 1
+      - path: Armature/Root/West/LegA_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R/LegC_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Throw
+      takeName: Default Take
+      firstFrame: 20
+      lastFrame: 25
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/IK_Leg_001_R
+        weight: 1
+      - path: Armature/Root/IK_Leg_L
+        weight: 1
+      - path: Armature/Root/West
+        weight: 1
+      - path: Armature/Root/West/Body
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/FIng_A_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L/Fing_B2_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/BallInitPosition
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/FIng_A_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R/Fing_B2_R
+        weight: 1
+      - path: Armature/Root/West/Body/Head
+        weight: 1
+      - path: Armature/Root/West/LegA_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L/LegC_L
+        weight: 1
+      - path: Armature/Root/West/LegA_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R/LegC_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: Default Take
+      firstFrame: 30
+      lastFrame: 62
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/IK_Leg_001_R
+        weight: 1
+      - path: Armature/Root/IK_Leg_L
+        weight: 1
+      - path: Armature/Root/West
+        weight: 1
+      - path: Armature/Root/West/Body
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/FIng_A_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L/Fing_B2_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/BallInitPosition
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/FIng_A_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R/Fing_B2_R
+        weight: 1
+      - path: Armature/Root/West/Body/Head
+        weight: 1
+      - path: Armature/Root/West/LegA_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L/LegC_L
+        weight: 1
+      - path: Armature/Root/West/LegA_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R/LegC_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Wait
+      takeName: Default Take
+      firstFrame: 100
+      lastFrame: 124
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/IK_Leg_001_R
+        weight: 1
+      - path: Armature/Root/IK_Leg_L
+        weight: 1
+      - path: Armature/Root/West
+        weight: 1
+      - path: Armature/Root/West/Body
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/FIng_A_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L/Fing_B2_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/BallInitPosition
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/FIng_A_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R/Fing_B2_R
+        weight: 1
+      - path: Armature/Root/West/Body/Head
+        weight: 1
+      - path: Armature/Root/West/LegA_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L/LegC_L
+        weight: 1
+      - path: Armature/Root/West/LegA_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R/LegC_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PreThrow
+      takeName: Default Take
+      firstFrame: 20
+      lastFrame: 20.1000004
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/IK_Leg_001_R
+        weight: 1
+      - path: Armature/Root/IK_Leg_L
+        weight: 1
+      - path: Armature/Root/West
+        weight: 1
+      - path: Armature/Root/West/Body
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/FIng_A_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L/Fing_B2_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/BallInitPosition
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/FIng_A_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R/Fing_B2_R
+        weight: 1
+      - path: Armature/Root/West/Body/Head
+        weight: 1
+      - path: Armature/Root/West/LegA_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L/LegC_L
+        weight: 1
+      - path: Armature/Root/West/LegA_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R/LegC_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PostThrow
+      takeName: Default Take
+      firstFrame: 25
+      lastFrame: 25.1000004
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/IK_Leg_001_R
+        weight: 1
+      - path: Armature/Root/IK_Leg_L
+        weight: 1
+      - path: Armature/Root/West
+        weight: 1
+      - path: Armature/Root/West/Body
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/FIng_A_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_L/ArmB_L/Fing_B1_L/Fing_B2_L
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/BallInitPosition
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/FIng_A_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R
+        weight: 1
+      - path: Armature/Root/West/Body/ArmA_R/ArmB_R/Fing_B1_R/Fing_B2_R
+        weight: 1
+      - path: Armature/Root/West/Body/Head
+        weight: 1
+      - path: Armature/Root/West/LegA_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L
+        weight: 1
+      - path: Armature/Root/West/LegA_L/LegB_L/LegC_L
+        weight: 1
+      - path: Armature/Root/West/LegA_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R
+        weight: 1
+      - path: Armature/Root/West/LegA_R/LegB_R/LegC_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
