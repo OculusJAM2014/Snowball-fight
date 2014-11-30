@@ -1226,6 +1226,33 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!1 &1028502909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1028502910}
+  m_Layer: 0
+  m_Name: FiringPorts
+  m_TagString: FiringPort
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1028502910
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028502909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1503510548}
+  m_RootOrder: 7
 --- !u!1 &1040629238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,6 +1922,7 @@ Transform:
   - {fileID: 418567944}
   - {fileID: 395161075}
   - {fileID: 1128866238}
+  - {fileID: 1028502910}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!143 &1503510549
