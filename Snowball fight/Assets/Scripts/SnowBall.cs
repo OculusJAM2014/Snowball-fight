@@ -20,6 +20,11 @@ public class SnowBall : MonoBehaviour {
         }
 	}
 
+
+    public void SetVelocity(Vector3 velo)
+    {
+        rigidbody.velocity = velo;
+    }
     public void AddForce(Vector3 force)
     {
         rigidbody.AddForce(force);

@@ -103,7 +103,7 @@
      <None Include="Assets\0000 terrain snow\atsV3 UnityTerrainSnow Package\Shaders\Trees\TreeCreatorBarkOptimizedSnow.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>C:/Users/708/Documents/GitHub/OculusJAM/Snowball-fight/Snowball-fight/Snowball fight/Assets/Plugins/x86_64/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>C:/Users/admin/Documents/GitHub/Snowball-fight_new/Snowball-fight/Snowball fight/Assets/Plugins/x86_64/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

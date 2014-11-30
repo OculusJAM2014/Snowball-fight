@@ -4,6 +4,7 @@ using System.Collections;
 public class SnowmanBoss : Enemy {
     public Vector3 jumpPower;
     public float chaseSpeed = 50f;
+    public float ballSpeed = 30f;
 	// Use this for initialization
 	void Start () {
         animation["Wait"].wrapMode = WrapMode.Loop;
@@ -66,7 +67,7 @@ public class SnowmanBoss : Enemy {
                 {
                     ball.rigidbody.useGravity = true;
                     float sqrLen = GetLen();
-                    ballScr.AddForce((transform.forward * throwPower.z) + new Vector3(0, 1f * DetectYPower(sqrLen) * throwPower.y));
+                    ballScr.SetVelocity((target.transform.position - this.transform.position) * ballSpeed);
                 }
             }
             yield return new WaitForSeconds(0.01f);
