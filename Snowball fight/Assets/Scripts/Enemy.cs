@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour {
         ATTACK,
         DEATH,
         JUMP,
+        FLYING,
     };
     protected STATE state = STATE.WAIT;
     protected void Setup()
@@ -193,7 +194,7 @@ public class Enemy : MonoBehaviour {
     }
 
     //移動するときは周囲を取り囲みたい
-    private void SetTarget()
+    protected void SetTarget()
     {
         target = decoyTarget[Random.Range(0,2)].transform;
         if (target == null)

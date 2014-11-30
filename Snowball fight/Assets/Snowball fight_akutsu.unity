@@ -237,7 +237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &105879740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,7 +567,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b2b15229f2a7a744e8cd48ea0f9d8400, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 266.139374
+      value: 266.1362
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b2b15229f2a7a744e8cd48ea0f9d8400, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2082,7 +2082,6 @@ GameObject:
   - 65: {fileID: 1517183562}
   - 114: {fileID: 1517183564}
   - 143: {fileID: 1517183566}
-  - 54: {fileID: 1517183565}
   m_Layer: 0
   m_Name: snowman_boss
   m_TagString: Untagged
@@ -2158,28 +2157,14 @@ MonoBehaviour:
   rotSpeed: 100
   moveThresholdLen: 500
   ballScale: 20
-  snowBall: {fileID: 0}
-  throwPower: {x: 0, y: 500, z: 1000}
+  snowBall: {fileID: 100000, guid: 34b14a10dceed3d41ae5f0ad3c98511d, type: 2}
+  throwPower: {x: 0, y: 100, z: 30}
   WAIT_CONTINUE_TIME: 2
   MOVE_CONTINUE_TIME: 1
   ATTACK_RATIO: 50
-  MOVE_RATIO: 30
-  jumpPower: {x: 0, y: 2000, z: 0}
---- !u!54 &1517183565
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1517183560}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  MOVE_RATIO: 0
+  jumpPower: {x: 0, y: 400, z: 0}
+  chaseSpeed: 25
 --- !u!143 &1517183566
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2459,7 +2444,7 @@ Transform:
   m_PrefabInternal: {fileID: 400081996}
   m_GameObject: {fileID: 1604899895}
   m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
-  m_LocalPosition: {x: 759.477905, y: 266.139374, z: 268.667389}
+  m_LocalPosition: {x: 759.477905, y: 266.1362, z: 268.667389}
   m_LocalScale: {x: 6.84557343, y: 6.84557295, z: 6.84557295}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4198,6 +4183,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1503510548}
+    - target: {fileID: 100000, guid: fb27b7874fe13a749becae1647620aa3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb27b7874fe13a749becae1647620aa3, type: 2}
   m_RootGameObject: {fileID: 105879739}

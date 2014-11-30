@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SnowmanBoss : Enemy {
     public Vector3 jumpPower;
+    public float chaseSpeed = 50f;
 	// Use this for initialization
 	void Start () {
         animation["Wait"].wrapMode = WrapMode.Loop;
@@ -16,13 +17,19 @@ public class SnowmanBoss : Enemy {
         Setup();
 	}
 
-    void Jump(){
+    Vector3 Jump(){
+        Vector3 velocity = new Vector3();
         Vector3 dir = target.position - this.transform.position;
-        
+        dir.y = 0f;
         dir.Normalize();
-        dir *= GetLen() * 100;
-
-        rigidbody.AddForce(dir + jumpPower);
+        dir *= chaseSpeed;
+        if (controller.isGrounded)
+        {
+            velocity.y = jumpPower.y;
+            velocity += dir;
+            animation.CrossFade("Jump", 0.2f);
+        }
+        return velocity;
     }
 
     //なげ
@@ -30,30 +37,42 @@ public class SnowmanBoss : Enemy {
     {
         state = STATE.NONE;
 
-        print("start preattack");
-        float time = Time.time;
-        while (Time.time - time <= 0.02)
-        {
-            yield return new WaitForSeconds(0.001f);
-        }
-        print("start Swing");
-        animation.CrossFade("Throw");
-        while (animation.IsPlaying("Throw"))
-        {
-            yield return new WaitForSeconds(0.01f);
-        }
+        //最初に球を作り
+        Transform ballTrans = transform.Find("Armature/Bone/Bone_001/Bone_002");
+        ballTrans.position += (transform.up * 5);
 
-        Transform ballTrans = transform.Find("Armature/Root/West/Body/ArmA_R/ArmB_R/BallInitPosition");
-        //ballTrans.position += (transform.right * 2);
         GameObject ball = (GameObject)Instantiate(snowBall, ballTrans.position, Quaternion.identity);
         // サイズをアレする
         ball.transform.localScale *= ballScale;
         SnowBall ballScr = (SnowBall)ball.GetComponent("SnowBall");
         ball.rigidbody.useGravity = false;
 
-        //距離によってy値を調整
-        float sqrLen = GetLen();
-        ballScr.AddForce((transform.forward * throwPower.z) + new Vector3(0, 1f * DetectYPower(sqrLen) * throwPower.y));
+        print("start preattack");
+        float time = Time.time;
+        while (Time.time - time <= 0.02)
+        {
+            yield return new WaitForSeconds(0.001f);
+        }
+
+        print("start Swing");
+        animation.CrossFade("Throw");
+        while (animation.IsPlaying("Throw"))
+        {
+            if (animation["Throw"].time > 1.5f)
+            {
+                //ここで飛ばす
+                //距離によってy値を調整
+                if (ball != null)
+                {
+                    ball.rigidbody.useGravity = true;
+                    float sqrLen = GetLen();
+                    ballScr.AddForce((transform.forward * throwPower.z) + new Vector3(0, 1f * DetectYPower(sqrLen) * throwPower.y));
+                }
+            }
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        
 
         animation.CrossFade("PostThrow", 0);
         while (Time.time - time <= 0.02)
@@ -75,10 +94,18 @@ public class SnowmanBoss : Enemy {
 
         switch(state){
             case STATE.WAIT:
+                moveDirection = Vector3.zero;
                 ChaseTarget(delta);
                 if (elapsedTime > 2)
                 {
-                    state = STATE.JUMP;
+                    if (Random.Range(0, 100) < MOVE_RATIO)
+                    {
+                        state = STATE.JUMP;
+                    }
+                    else
+                    {
+                        state = STATE.ATTACK;
+                    }
                     elapsedTime = 0;
                 }
                 animation.CrossFade("Wait", 0.2f);
@@ -86,19 +113,26 @@ public class SnowmanBoss : Enemy {
                 break;
             case STATE.JUMP:
                 ChaseTarget(delta);
-                Jump();
-                animation.CrossFade("Jump", 0.2f);
-                
+                SetTarget();
+                moveDirection += Jump();
+                elapsedTime = 0f;
+                state = STATE.FLYING;
                 break;
             case STATE.ATTACK:
                 ChaseTarget(delta);
-                animation.CrossFade("Attack", 0.2f);
                 StartCoroutine("Shot");
-                state = STATE.WAIT;
+                state = STATE.NONE;
                 break;
             case STATE.DEATH:
                 animation.CrossFade("Death", 0.2f);
                 StartCoroutine("Die");
+                break;
+            case STATE.FLYING:
+                if (controller.isGrounded)
+                {
+                    target = playerTransform;
+                    state = STATE.WAIT;
+                }
                 break;
         }
 
