@@ -10,9 +10,9 @@ public class Enemy : MonoBehaviour {
     public float rotSpeed = 100f;
     public float moveThresholdLen = 500f;
     public float ballScale;
-    CharacterController controller;
-    Vector3 moveDirection = new Vector3();
-    GameObject[] decoyTarget;
+    protected CharacterController controller;
+    protected Vector3 moveDirection = new Vector3();
+    protected GameObject[] decoyTarget;
     public GameObject snowBall;
     public Vector3 throwPower;
     public float WAIT_CONTINUE_TIME;
@@ -22,15 +22,26 @@ public class Enemy : MonoBehaviour {
 
 
     //EnemyState state;
-    enum STATE
+    protected enum STATE
     {
         NONE,
         WAIT,
         MOVE,
         ATTACK,
         DEATH,
+        JUMP,
     };
-    STATE state = STATE.WAIT;
+    protected STATE state = STATE.WAIT;
+    protected void Setup()
+    {
+        target = GameObject.Find(targetName).transform;
+        playerTransform = target;
+
+        controller = (CharacterController)GetComponent("CharacterController");
+
+        decoyTarget = GameObject.FindGameObjectsWithTag("DecoyTarget");
+    }
+
 	// Use this for initialization
 	void Start () {
 	    //controller.
@@ -39,15 +50,11 @@ public class Enemy : MonoBehaviour {
         animation["Death"].wrapMode = WrapMode.Once;
         animation["PreThrow"].wrapMode = WrapMode.Loop;
         animation["PostThrow"].wrapMode = WrapMode.Loop;
-        target = GameObject.Find(targetName).transform;
-        playerTransform = target;
 
-        controller = (CharacterController)GetComponent("CharacterController");
-
-        decoyTarget = GameObject.FindGameObjectsWithTag("DecoyTarget");
+        Setup();
 	}
 
-    float DetectYPower(float sqtLen)
+    protected float DetectYPower(float sqtLen)
     {
         float ret = 0f;
         float minPower = 0.1f;
@@ -61,7 +68,8 @@ public class Enemy : MonoBehaviour {
     }
 
     //なげ
-    IEnumerator Shot() {
+    protected IEnumerator Shot()
+    {
         state = STATE.NONE;
 
 	    print("start preattack");
@@ -97,7 +105,7 @@ public class Enemy : MonoBehaviour {
         state = STATE.WAIT;
     }
 
-    float GetLen()
+    protected float GetLen()
     {
         Vector3 len = target.position - this.transform.position;
         return len.sqrMagnitude;
@@ -204,7 +212,7 @@ public class Enemy : MonoBehaviour {
     }
 
     //死ぬ
-    IEnumerator Die()
+    protected IEnumerator Die()
     {
         state = STATE.NONE;
         while (animation.IsPlaying("Death"))
@@ -226,7 +234,7 @@ public class Enemy : MonoBehaviour {
     }
 
 	// Update is called once per frame
-    float elapsedTime = 0f; //ある状態を継続した時間
+    protected float elapsedTime = 0f; //ある状態を継続した時間
     float angle = 0;
 	void Update () {
         float delta = Time.deltaTime;
@@ -297,7 +305,7 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    private void ChaseTarget(float delta)
+    protected void ChaseTarget(float delta)
     {
         Vector3 targetPos = target.position;
         Vector3 thisPos = this.transform.position;

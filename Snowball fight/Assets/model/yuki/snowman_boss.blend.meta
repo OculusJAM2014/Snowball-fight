@@ -1,0 +1,410 @@
+fileFormatVersion: 2
+guid: 13dd41b0635d8b344aa3f1399ecb57d1
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ArmA_L
+    100002: ArmA_R
+    100004: Armature
+    100006: ArmB_L
+    100008: ArmB_R
+    100010: Bone
+    100012: Bone_001
+    100014: Bone_002
+    100016: Bone_003
+    100018: Circle
+    100020: Cylinder_001
+    100022: IK_Body
+    100024: //RootNode
+    400000: ArmA_L
+    400002: ArmA_R
+    400004: Armature
+    400006: ArmB_L
+    400008: ArmB_R
+    400010: Bone
+    400012: Bone_001
+    400014: Bone_002
+    400016: Bone_003
+    400018: Circle
+    400020: Cylinder_001
+    400022: IK_Body
+    400024: //RootNode
+    2300000: Circle
+    3300000: Circle
+    4300000: Cylinder_001
+    4300002: Circle
+    7400000: Throw
+    7400002: Wait
+    7400004: Jump
+    7400006: Death
+    7400008: PreThrow
+    7400010: PostThrow
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Cylinder_001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Wait
+      takeName: ArmatureAction
+      firstFrame: 0
+      lastFrame: 91
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/ArmA_L
+        weight: 1
+      - path: Armature/Bone/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Bone/ArmA_R
+        weight: 1
+      - path: Armature/Bone/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/IK_Body
+        weight: 1
+      - path: Circle
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Throw
+      takeName: Default Take
+      firstFrame: 100
+      lastFrame: 141
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/ArmA_L
+        weight: 1
+      - path: Armature/Bone/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Bone/ArmA_R
+        weight: 1
+      - path: Armature/Bone/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/IK_Body
+        weight: 1
+      - path: Circle
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Jump
+      takeName: Default Take
+      firstFrame: 150
+      lastFrame: 178
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/ArmA_L
+        weight: 1
+      - path: Armature/Bone/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Bone/ArmA_R
+        weight: 1
+      - path: Armature/Bone/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/IK_Body
+        weight: 1
+      - path: Circle
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: Default Take
+      firstFrame: 190
+      lastFrame: 196
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/ArmA_L
+        weight: 1
+      - path: Armature/Bone/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Bone/ArmA_R
+        weight: 1
+      - path: Armature/Bone/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/IK_Body
+        weight: 1
+      - path: Circle
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PreThrow
+      takeName: Default Take
+      firstFrame: 100
+      lastFrame: 100.099998
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/ArmA_L
+        weight: 1
+      - path: Armature/Bone/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Bone/ArmA_R
+        weight: 1
+      - path: Armature/Bone/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/IK_Body
+        weight: 1
+      - path: Circle
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PostThrow
+      takeName: Default Take
+      firstFrame: 141
+      lastFrame: 141.100006
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/ArmA_L
+        weight: 1
+      - path: Armature/Bone/ArmA_L/ArmB_L
+        weight: 1
+      - path: Armature/Bone/ArmA_R
+        weight: 1
+      - path: Armature/Bone/ArmA_R/ArmB_R
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/IK_Body
+        weight: 1
+      - path: Circle
+        weight: 1
+      - path: Cylinder_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 180
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 2
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
