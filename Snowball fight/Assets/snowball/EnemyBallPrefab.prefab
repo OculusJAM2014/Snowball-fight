@@ -14,6 +14,7 @@ GameObject:
   - 143: {fileID: 14300000}
   - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
+  - 135: {fileID: 13500000}
   m_Layer: 0
   m_Name: EnemyBallPrefab
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 739.269104, y: 272.625366, z: 310.158752}
-  m_LocalScale: {x: .0199999996, y: .0199999996, z: .0199999996}
+  m_LocalScale: {x: .00999999978, y: .00999999978, z: .00999999978}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,7 +84,7 @@ MeshCollider:
   m_GameObject: {fileID: 100000}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0
@@ -100,6 +101,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DEST_TIME: 5
+  ballDestroyParticle: {fileID: 100000, guid: 97f07d004e86ebd4994b3d279431f474, type: 2}
+--- !u!135 &13500000
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 86.4899979
+  m_Center: {x: 4.36658669, y: -2.390625, z: .679986954}
 --- !u!143 &14300000
 CharacterController:
   m_ObjectHideFlags: 1
