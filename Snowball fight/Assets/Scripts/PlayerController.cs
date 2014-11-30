@@ -31,8 +31,8 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        HandModel[] physicsHands = handController.GetAllPhysicsHands();
+    void LateUpdate(){
+	//void Update () {
 
 
         GameObject camera = GameObject.FindWithTag("MainCamera");
@@ -40,6 +40,14 @@ public class PlayerController : MonoBehaviour {
         //Vector3 vec = ovrCameraRig.centerEyeAnchor.forward * ballSpeed;
         Debug.Log(ovrCameraRig.centerEyeAnchor.forward);
 
+        /*余裕があれば
+        if (VirtualInput.instance.CheckInput())
+        {
+
+        }
+         * */
+        
+        HandModel[] physicsHands = handController.GetAllPhysicsHands();
         for (int i = 0; i < physicsHands.Length; i++) {
 
             HandModel handModel = physicsHands[i];
@@ -62,7 +70,6 @@ public class PlayerController : MonoBehaviour {
             }
             else throwState[handID] = ThrowState.None;
         }
-
 
 	}
     void ThrowBall(HandModel handModel) {

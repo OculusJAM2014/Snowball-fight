@@ -763,15 +763,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 100
-  speed: 5
+  speed: 350
   target: {fileID: 0}
+  playerTransform: {fileID: 0}
   targetName: First Person Controller
-  rotSpeed: 100
+  rotSpeed: 200
+  moveThresholdLen: 200
   ballScale: 1
   snowBall: {fileID: 100000, guid: 34b14a10dceed3d41ae5f0ad3c98511d, type: 2}
-  throwPower: {x: 0, y: 300, z: 1500}
-  WAIT_CONTINUE_TIME: 2
-  MOVE_CONTINUE_TIME: 4
+  throwPower: {x: 0, y: 2000, z: 1500}
+  WAIT_CONTINUE_TIME: 1
+  MOVE_CONTINUE_TIME: 1
   ATTACK_RATIO: 70
   MOVE_RATIO: 20
 --- !u!137 &13700000

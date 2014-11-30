@@ -5,11 +5,14 @@ public class Enemy : MonoBehaviour {
     public int life;
     public int speed;
     public Transform target;
+    public Transform playerTransform;
     public string targetName;
-    public float rotSpeed;
+    public float rotSpeed = 100f;
+    public float moveThresholdLen = 500f;
     public float ballScale;
     CharacterController controller;
     Vector3 moveDirection = new Vector3();
+    GameObject[] decoyTarget;
     public GameObject snowBall;
     public Vector3 throwPower;
     public float WAIT_CONTINUE_TIME;
@@ -37,9 +40,25 @@ public class Enemy : MonoBehaviour {
         animation["PreThrow"].wrapMode = WrapMode.Loop;
         animation["PostThrow"].wrapMode = WrapMode.Loop;
         target = GameObject.Find(targetName).transform;
+        playerTransform = target;
 
         controller = (CharacterController)GetComponent("CharacterController");
+
+        decoyTarget = GameObject.FindGameObjectsWithTag("DecoyTarget");
 	}
+
+    float DetectYPower(float sqtLen)
+    {
+        float ret = 0f;
+        float minPower = 0.1f;
+        float maxPower = 1f;
+        float maxLen = 10000f;
+
+        ret = (maxPower - minPower) / maxLen * sqtLen + minPower;
+        ret = Mathf.Max(minPower, Mathf.Min(maxPower, ret));
+
+        return ret;
+    }
 
     //なげ
     IEnumerator Shot() {
@@ -57,17 +76,16 @@ public class Enemy : MonoBehaviour {
 	    }
         
         Transform ballTrans = transform.Find("Armature/Root/West/Body/ArmA_R/ArmB_R/BallInitPosition");
-        ballTrans.position += (transform.right * 2);
+        //ballTrans.position += (transform.right * 2);
         GameObject ball = (GameObject)Instantiate(snowBall, ballTrans.position, Quaternion.identity);
         // サイズをアレする
         ball.transform.localScale *= ballScale;
         SnowBall ballScr = (SnowBall)ball.GetComponent("SnowBall");
 
         //距離によってy値を調整
-        Vector3 distance = target.transform.position - this.transform.position;
-        float sqrLen = distance.sqrMagnitude;
-        ballScr.AddForce(throwPower.x * transform.forward.x, throwPower.y *1f * Mathf.Max(0,(sqrLen - 100)/1000), throwPower.z * transform.forward.z);
-
+        float sqrLen = GetLen();
+        ballScr.AddForce((transform.forward * throwPower.z) + new Vector3(0, 1f * DetectYPower(sqrLen) * throwPower.y));
+ 
 	    animation.CrossFade("PostThrow",0);
 	    while( Time.time - time <= 0.02){
             yield return new WaitForSeconds(0.01f);
@@ -79,14 +97,21 @@ public class Enemy : MonoBehaviour {
         state = STATE.WAIT;
     }
 
+    float GetLen()
+    {
+        Vector3 len = target.position - this.transform.position;
+        return len.sqrMagnitude;
+    }
+
     //この辺は後で実装
     void ChangeState(STATE prevState)
     {
         elapsedTime = 0f;
 
         int ratio = Random.Range(0, 100);
-        
-       
+
+
+        target = playerTransform;
         switch (prevState)
         {
             case STATE.WAIT:
@@ -98,12 +123,12 @@ public class Enemy : MonoBehaviour {
                     }//else nop
                     else
                     {
-                        state = STATE.MOVE;
+                        GotoMoveState();
                     }
                 }
                 else if (ratio < ATTACK_RATIO + MOVE_RATIO)
                 {
-                    state = STATE.MOVE;
+                    GotoMoveState();
                 }
                 else
                 {
@@ -124,7 +149,7 @@ public class Enemy : MonoBehaviour {
                 }
                 else if (ratio < ATTACK_RATIO + MOVE_RATIO)
                 {
-                    state = STATE.MOVE;
+                    GotoMoveState();
                 }
                 else
                 {
@@ -134,7 +159,7 @@ public class Enemy : MonoBehaviour {
             case STATE.ATTACK:
                 if (ratio <  MOVE_RATIO)
                 {
-                    state = STATE.MOVE;
+                    GotoMoveState();
                 }
                 else
                 {
@@ -144,6 +169,29 @@ public class Enemy : MonoBehaviour {
         }
         
         Util.DebugPrint("chnge state" + prevState + " to " + state);
+    }
+
+    private void GotoMoveState()
+    {
+        if (GetLen() > moveThresholdLen)
+        {
+            SetTarget();
+            state = STATE.MOVE;
+        }
+        else
+        {
+            state = STATE.WAIT;
+        }
+    }
+
+    //移動するときは周囲を取り囲みたい
+    private void SetTarget()
+    {
+        target = decoyTarget[Random.Range(0,2)].transform;
+        if (target == null)
+        {
+            target = playerTransform;
+        }
     }
 
     Vector3 CalcMoveDir()
@@ -194,8 +242,7 @@ public class Enemy : MonoBehaviour {
                 animation.CrossFade("Wait", 0.2f);
                 ChaseTarget(delta);
 
-                //ChaseTarget(delta);
-                if (elapsedTime > WAIT_CONTINUE_TIME + Random.Range(0.0f,2.0f) )
+                if (elapsedTime > WAIT_CONTINUE_TIME + Random.Range(0.0f,0.5f) )
                 {
                     ChangeState(state);
                     //state = STATE.NONE;
@@ -204,22 +251,12 @@ public class Enemy : MonoBehaviour {
                 break;
             case STATE.MOVE:
                 animation.CrossFade("Run", 0.2f);
-                /*
-                Vector3 targetPos = new Vector3(target.transform.position.x, 0, target.transform.position.z);
-                Vector3 thisPos = new Vector3(this.transform.position.x, 0, this.transform.position.z);
-                Vector3 dir = (targetPos - thisPos);
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.time * 0.1f);
-                 * */
+
                 ChaseTarget(delta);
                 moveDirection = transform.forward;
-                moveDirection *= speed;
+                moveDirection *= (speed * delta);
                 
-                /*
-                moveDirection = CalcMoveDir() * speed;
-                moveDirection.y -= Defines.gravity * Time.deltaTime;
-                controller.Move(moveDirection * Time.deltaTime);
-                 * */
-                if (elapsedTime > MOVE_CONTINUE_TIME + Random.Range(0.0f, 2.0f) )
+                if (elapsedTime > MOVE_CONTINUE_TIME + Random.Range(0.0f, 1.0f) )
                 {
                     ChangeState(state);
                    
@@ -262,6 +299,14 @@ public class Enemy : MonoBehaviour {
 
     private void ChaseTarget(float delta)
     {
+        Vector3 targetPos = target.position;
+        Vector3 thisPos = this.transform.position;
+        Vector3 rotVector = new Vector3(targetPos.x - thisPos.x , 0, targetPos.z - thisPos.z);
+
+        Quaternion rotation = Quaternion.LookRotation(rotVector);
+        transform.rotation = Quaternion.Slerp(transform.rotation,rotation,delta * rotSpeed);
+
+        /*
         //rotate
         //transform.LookAt(new Vector3(target.position.x,this.transform.position.y,target.position.z));
         Vector3 dir = (target.transform.position - this.transform.position);
@@ -279,6 +324,6 @@ public class Enemy : MonoBehaviour {
             //transform.rotation =  Quaternion.Euler(new Vector3(0, angle, 0));
             transform.Rotate(transform.up, delta * 200);
             //transform.LookAt(target.position);
-        }
+        }*/
     }
 }
