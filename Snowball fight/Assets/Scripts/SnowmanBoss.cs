@@ -4,7 +4,7 @@ using System.Collections;
 public class SnowmanBoss : Enemy {
     public Vector3 jumpPower;
     public float chaseSpeed = 50f;
-    public float ballSpeed = 30f;
+    public float ballSpeed = 3f;
 	// Use this for initialization
 	void Start () {
         animation["Wait"].wrapMode = WrapMode.Loop;
@@ -68,12 +68,11 @@ public class SnowmanBoss : Enemy {
                     ball.rigidbody.useGravity = true;
                     float sqrLen = GetLen();
                     ballScr.SetVelocity((target.transform.position - this.transform.position) * ballSpeed);
+                    ballScr.AddForce(Vector3.up * 10f);
                 }
             }
             yield return new WaitForSeconds(0.01f);
-        }
-
-        
+        }        
 
         animation.CrossFade("PostThrow", 0);
         while (Time.time - time <= 0.02)
@@ -122,6 +121,7 @@ public class SnowmanBoss : Enemy {
             case STATE.ATTACK:
                 ChaseTarget(delta);
                 StartCoroutine("Shot");
+                elapsedTime = 0f;
                 state = STATE.NONE;
                 break;
             case STATE.DEATH:
@@ -133,6 +133,7 @@ public class SnowmanBoss : Enemy {
                 {
                     target = playerTransform;
                     state = STATE.WAIT;
+                    elapsedTime = 0f;
                 }
                 break;
         }

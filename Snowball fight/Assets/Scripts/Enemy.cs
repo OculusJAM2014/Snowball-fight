@@ -32,6 +32,15 @@ public class Enemy : MonoBehaviour {
         JUMP,
         FLYING,
     };
+
+    public void Damage(int damage)
+    {
+        if (life > 0)
+        {
+            life -= damage;
+        }
+    }
+
     protected STATE state = STATE.WAIT;
     protected void Setup()
     {
